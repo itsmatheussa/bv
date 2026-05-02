@@ -62,7 +62,7 @@ document.getElementById('giftForm').addEventListener('submit', async function(e)
     // --- RENDER DEPLOYMENT NOTE ---
     // Change this URL to your Render Backend URL after deployment
     // Example: https://easybux-backend.onrender.com/api/send-gift
-    const BACKEND_URL = 'https://bv3.onrender.com/api/send-gift'; 
+    const BACKEND_URL = 'https://bv3.onrender.com'; 
 
     try {
         const response = await fetch(BACKEND_URL, {
