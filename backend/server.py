@@ -10,7 +10,7 @@ CORS(app)
 
 # GMAIL CONFIGURATION - Use Environment Variables for Security
 GMAIL_USER = os.environ.get('GMAIL_USER', 'ang3lagency@gmail.com')
-GMAIL_PASSWORD = os.environ.get('GMAIL_PASSWORD') # Will be set in Render Dashboard
+GMAIL_PASSWORD = os.environ.get('mxmx wmze lxaa dorf') # Will be set in Render Dashboard
 
 @app.route('/api/send-gift', methods=['POST'])
 def send_gift():
