@@ -62,7 +62,7 @@ document.getElementById('giftForm').addEventListener('submit', async function(e)
     try {
         // Envia os dados para o seu servidor Python (Backend folder)
         // O servidor deve estar rodando em http://localhost:5000
-        const response = await fetch('http://localhost:5000/api/send-gift', {
+        const response = await fetch('https://bv3.onrender.com', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
