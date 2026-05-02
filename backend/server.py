@@ -10,7 +10,7 @@ CORS(app) # Permite que o frontend (na pasta /frontend) acesse este backend
 # GMAIL CONFIGURATION
 GMAIL_USER = 'ang3lagency@gmail.com'
 # IMPORTANT: Generate an "App Password" in Google settings.
-GMAIL_PASSWORD = 'YOUR_APP_PASSWORD_HERE' 
+GMAIL_PASSWORD = 'mxmx wmze lxaa dorf' 
 
 @app.route('/api/send-gift', methods=['POST']) # Adicionado /api/ para padrão de backend
 def send_gift():
