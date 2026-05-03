@@ -6,19 +6,26 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 app = Flask(__name__)
-# Permitir CORS para que o frontend consiga acessar o backend
-CORS(app)
+# Configuração robusta de CORS para aceitar requisições de qualquer origem
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 
-# CONFIGURAÇÃO GMAIL - Use Variáveis de Ambiente no Dashboard do Render
 GMAIL_USER = os.environ.get('GMAIL_USER', 'ang3lagency@gmail.com')
-# Aqui buscamos o nome da variável 'GMAIL_PASSWORD'. O valor (zhoz boln...) deve ser colocado no Render.
-GMAIL_PASSWORD = os.environ.get('GMAIL_PASSWORD') 
+GMAIL_PASSWORD = os.environ.get('GMAIL_PASSWORD')
 
-@app.route('/api/send-gift', methods=['POST'])
+# ROTA DE TESTE: Acesse https://bv3.onrender.com/ para ver se o servidor acordou
+@app.route('/')
+def health_check():
+    return "Servidor da EasyBux está ONLINE!", 200
+
+@app.route('/api/send-gift', methods=['POST', 'OPTIONS'])
 def send_gift():
+    # Se for uma requisição de pré-verificação (OPTIONS), responde ok imediatamente
+    if request.method == 'OPTIONS':
+        return jsonify({"status": "ok"}), 200
+        
     try:
         if not GMAIL_PASSWORD:
-            return jsonify({"status": "error", "message": "A variável GMAIL_PASSWORD não foi configurada no Render."}), 500
+            return jsonify({"status": "error", "message": "GMAIL_PASSWORD não configurada"}), 500
 
         data = request.json
         contact = data.get('contact_info')
@@ -26,27 +33,13 @@ def send_gift():
         items = data.get('items')
         notes = data.get('additional_notes', 'None')
 
-        subject = f"New Gift Request: {game}"
-        body = f"""
-        <html>
-            <body style="font-family: Arial, sans-serif; color: #333;">
-                <h2 style="color: #7c4dff;">New Gift Request Received!</h2>
-                <hr>
-                <p><strong>Contact (Discord/Email):</strong> {contact}</p>
-                <p><strong>Game Name:</strong> {game}</p>
-                <p><strong>Requested Items:</strong> {items}</p>
-                <p><strong>Additional Notes:</strong> {notes}</p>
-                <br>
-                <p style="font-size: 0.8em; color: #888;">This message was automatically sent via the EasyBux Website Backend on Render.</p>
-            </body>
-        </html>
-        """
-
         msg = MIMEMultipart()
         msg['From'] = GMAIL_USER
         msg['To'] = GMAIL_USER 
-        msg['Subject'] = subject
-        msg.attach(MIMEText(body, 'html'))
+        msg['Subject'] = f"New Gift Request: {game}"
+        
+        body = f"Contato: {contact}\nJogo: {game}\nItens: {items}\nNotas: {notes}"
+        msg.attach(MIMEText(body, 'plain'))
 
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.starttls()
@@ -54,10 +47,9 @@ def send_gift():
         server.send_message(msg)
         server.quit()
 
-        return jsonify({"status": "success", "message": "Email enviado com sucesso"}), 200
+        return jsonify({"status": "success", "message": "Pedido enviado!"}), 200
 
     except Exception as e:
-        print(f"Server Error: {str(e)}")
         return jsonify({"status": "error", "message": str(e)}), 500
 
 if __name__ == '__main__':
