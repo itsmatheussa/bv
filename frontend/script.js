@@ -24,7 +24,7 @@ document.getElementById('giftForm').addEventListener('submit', async function(e)
     };
 
     // --- CORREÇÃO AQUI: URL COMPLETA DO ENDPOINT ---
-    const BACKEND_URL = 'https://bv3.onrender.com/api/send-gift'; 
+    const BACKEND_URL = 'https://bv3.onrender.com'; 
 
     try {
         const response = await fetch(BACKEND_URL, {
