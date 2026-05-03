@@ -6,17 +6,19 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 app = Flask(__name__)
+# Permitir CORS para que o frontend consiga acessar o backend
 CORS(app)
 
-# GMAIL CONFIGURATION - Use Environment Variables for Security
+# CONFIGURAÇÃO GMAIL - Use Variáveis de Ambiente no Dashboard do Render
 GMAIL_USER = os.environ.get('GMAIL_USER', 'ang3lagency@gmail.com')
-GMAIL_PASSWORD = os.environ.get('zhoz boln mrhd pkeo') # Will be set in Render Dashboard
+# Aqui buscamos o nome da variável 'GMAIL_PASSWORD'. O valor (zhoz boln...) deve ser colocado no Render.
+GMAIL_PASSWORD = os.environ.get('GMAIL_PASSWORD') 
 
 @app.route('/api/send-gift', methods=['POST'])
 def send_gift():
     try:
         if not GMAIL_PASSWORD:
-            return jsonify({"status": "error", "message": "GMAIL_PASSWORD environment variable not set"}), 500
+            return jsonify({"status": "error", "message": "A variável GMAIL_PASSWORD não foi configurada no Render."}), 500
 
         data = request.json
         contact = data.get('contact_info')
@@ -52,7 +54,7 @@ def send_gift():
         server.send_message(msg)
         server.quit()
 
-        return jsonify({"status": "success", "message": "Email sent successfully"}), 200
+        return jsonify({"status": "success", "message": "Email enviado com sucesso"}), 200
 
     except Exception as e:
         print(f"Server Error: {str(e)}")
