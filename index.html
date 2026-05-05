@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyBux | Premium Game Gifts</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Ambient background particles -->
+    <div class="bg-particles">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+    </div>
+
+    <header>
+        <nav class="navbar" id="navbar">
+            <div class="logo">
+                <img src="assets/logo.png" alt="EasyBux Logo">
+                <span>EasyBux</span>
+            </div>
+
+            <!-- Hamburger (mobile) -->
+            <button class="hamburger" id="hamburger" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#shop" class="nav-link">Shop</a></li>
+                <li><a href="#gifts" class="nav-link">Order</a></li>
+            </ul>
+        </nav>
+        <div class="nav-overlay" id="navOverlay"></div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-wrapper">
+                <div class="hero-content reveal-left">
+                    <h1>Get any <span>Game Gift</span></h1>
+                    <p>Premium items, gamepasses and exclusive skins delivered straight to you. Safe, fast and reliable.</p>
+                    <div class="hero-btns">
+                        <a href="#shop" class="btn-main">Browse Catalog</a>
+                    </div>
+                </div>
+                <div class="hero-image reveal-right">
+                    <img src="assets/gifts_banner.png" alt="Gifts Banner" class="float-anim">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="shop" class="shop-section">
+        <div class="container">
+            <h2 class="section-title reveal-up">Our <span>Highlights</span></h2>
+
+            <div class="shop-grid">
+                <div class="game-category reveal-up" style="--delay:0s">
+                    <h3><i class="fas fa-ship"></i> Blox Fruits</h3>
+                    <div class="item-card" onclick="addItem('Blox Fruits','Dark Blade','R$ 45,90')">
+                        <img src="assets/Dark Blade.png" alt="Dark Blade" class="item-img">
+                        <div class="item-info">
+                            <span class="item-name">Dark Blade</span>
+                            <span class="item-price">R$ 45,90</span>
+                        </div>
+                        <button class="btn-select"><i class="fas fa-plus"></i> Select</button>
+                    </div>
+                    <div class="item-card" onclick="addItem('Blox Fruits','Fruit Notifier','R$ 89,00')">
+                        <img src="assets/Fruit Notifier.png" alt="Fruit Notifier" class="item-img">
+                        <div class="item-info">
+                            <span class="item-name">Fruit Notifier</span>
+                            <span class="item-price">R$ 89,00</span>
+                        </div>
+                        <button class="btn-select"><i class="fas fa-plus"></i> Select</button>
+                    </div>
+                </div>
+
+                <div class="game-category reveal-up" style="--delay:0.1s">
+                    <h3><i class="fas fa-dog"></i> Pet Simulator 99</h3>
+                    <div class="item-card" onclick="addItem('Pet Simulator 99','Huge Hunter','R$ 62,00')">
+                        <img src="assets/Huge Hunter.png" alt="Huge Hunter" class="item-img">
+                        <div class="item-info">
+                            <span class="item-name">Huge Hunter</span>
+                            <span class="item-price">R$ 62,00</span>
+                        </div>
+                        <button class="btn-select"><i class="fas fa-plus"></i> Select</button>
+                    </div>
+                    <div class="item-card" onclick="addItem('Pet Simulator 99','VIP Status','R$ 12,50')">
+                        <img src="assets/VIP Status.png" alt="VIP Status" class="item-img">
+                        <div class="item-info">
+                            <span class="item-name">VIP Status</span>
+                            <span class="item-price">R$ 12,50</span>
+                        </div>
+                        <button class="btn-select"><i class="fas fa-plus"></i> Select</button>
+                    </div>
+                </div>
+
+                <div class="game-category reveal-up" style="--delay:0.2s">
+                    <h3><i class="fas fa-home"></i> Brookhaven RP</h3>
+                    <div class="item-card" onclick="addItem('Brookhaven RP','Premium','R$ 18,90')">
+                        <img src="assets/Premium.png" alt="Premium" class="item-img">
+                        <div class="item-info">
+                            <span class="item-name">Premium</span>
+                            <span class="item-price">R$ 18,90</span>
+                        </div>
+                        <button class="btn-select"><i class="fas fa-plus"></i> Select</button>
+                    </div>
+                </div>
+
+                <div class="game-category reveal-up" style="--delay:0.3s">
+                    <h3><i class="fas fa-fire"></i> Anime Defenders</h3>
+                    <div class="item-card" onclick="addItem('Anime Defenders','Battle Pass','R$ 29,90')">
+                        <img src="assets/Battle Pass.png" alt="Battle Pass" class="item-img">
+                        <div class="item-info">
+                            <span class="item-name">Battle Pass</span>
+                            <span class="item-price">R$ 29,90</span>
+                        </div>
+                        <button class="btn-select"><i class="fas fa-plus"></i> Select</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gifts" class="gifts-section">
+        <div class="container">
+            <div class="gifts-container-wrapper reveal-up">
+                <div class="gifts-form">
+                    <h2>Complete <span>Order</span></h2>
+                    <p>Fill in your details below. We'll send the payment link shortly.</p>
+
+                    <form id="giftForm">
+                        <div class="form-group">
+                            <label>Discord or Email *</label>
+                            <input type="text" id="contactInfo" placeholder="@username or email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label><i class="fas fa-user" style="color:var(--primary-color);margin-right:6px;"></i>Roblox Username *</label>
+                            <input type="text" id="robloxNick" placeholder="Your exact Roblox username" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Selected Items *</label>
+                            <div id="cartContainer">
+                                <div id="cartEmpty" class="cart-empty">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>No items selected yet. Pick some from the shop above!</span>
+                                </div>
+                                <div id="cartItems"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Extra Notes</label>
+                            <textarea id="message" placeholder="Any extra details?"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-gift" id="submitBtn" disabled>Send Order</button>
+                    </form>
+                </div>
+                <div class="gifts-image">
+                    <img src="assets/gifts_banner.png" alt="Gifts Image" class="float-anim">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <img src="assets/logo.png" alt="Logo" class="footer-logo-img">
+                <p>&copy; 2026 EasyBux - All rights reserved. Not affiliated with Roblox.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+            <h2>Order Sent!</h2>
+            <p>Keep an eye on your contact. The payment link will arrive shortly.</p>
+            <button class="btn-primary" onclick="closeModal()" style="margin-top:20px;">Close</button>
+        </div>
+    </div>
+
+    <div id="toast" class="toast">
+        <i class="fas fa-check"></i> <span id="toastMsg"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
