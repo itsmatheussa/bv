@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyBux | Premium Game Gifts</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="https://img.icons8.com/fluency/48/gem.png" alt="Logo">
+                <span>EasyBux</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Loja</a></li>
+                <li><a href="#gifts">Pedido Custom</a></li>
+            </ul>
+            <button class="btn-primary">Login</button>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Itens Premium com <span>Preço de Revenda</span></h1>
+            <p>Gamepasses e itens exclusivos dos jogos mais populares do Roblox, entregues com segurança via Gift ou Trade.</p>
+            <div class="hero-btns">
+                <a href="#shop" class="btn-main">Ver Catálogo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Loja Híbrida -->
+    <section id="shop" class="shop-section">
+        <div class="container">
+            <h2 class="section-title">Itens em Destaque</h2>
+            
+            <div class="shop-grid">
+                <!-- Blox Fruits -->
+                <div class="game-category">
+                    <h3><i class="fas fa-ship"></i> Blox Fruits</h3>
+                    <div class="item-card" onclick="selectItem('Blox Fruits', 'Dark Blade')">
+                        <div class="item-info">
+                            <span class="item-name">Dark Blade</span>
+                            <span class="item-price">R$ 45,90</span>
+                        </div>
+                        <button class="btn-select">Pedir</button>
+                    </div>
+                    <div class="item-card" onclick="selectItem('Blox Fruits', 'Fruit Notifier')">
+                        <div class="item-info">
+                            <span class="item-name">Fruit Notifier</span>
+                            <span class="item-price">R$ 89,00</span>
+                        </div>
+                        <button class="btn-select">Pedir</button>
+                    </div>
+                    <div class="item-card" onclick="selectItem('Blox Fruits', 'Fast Boats')">
+                        <div class="item-info">
+                            <span class="item-name">Fast Boats</span>
+                            <span class="item-price">R$ 15,00</span>
+                        </div>
+                        <button class="btn-select">Pedir</button>
+                    </div>
+                </div>
+
+                <!-- Pet Simulator 99 -->
+                <div class="game-category">
+                    <h3><i class="fas fa-dog"></i> Pet Simulator 99</h3>
+                    <div class="item-card" onclick="selectItem('Pet Simulator 99', 'Huge Hunter Pass')">
+                        <div class="item-info">
+                            <span class="item-name">Huge Hunter</span>
+                            <span class="item-price">R$ 62,00</span>
+                        </div>
+                        <button class="btn-select">Pedir</button>
+                    </div>
+                    <div class="item-card" onclick="selectItem('Pet Simulator 99', 'VIP Gamepass')">
+                        <div class="item-info">
+                            <span class="item-name">VIP Status</span>
+                            <span class="item-price">R$ 12,50</span>
+                        </div>
+                        <button class="btn-select">Pedir</button>
+                    </div>
+                    <div class="item-card" onclick="selectItem('Pet Simulator 99', '+15 Pets Equipped')">
+                        <div class="item-info">
+                            <span class="item-name">+15 Pets</span>
+                            <span class="item-price">R$ 28,00</span>
+                        </div>
+                        <button class="btn-select">Pedir</button>
+                    </div>
+                </div>
+
+                <!-- Brookhaven -->
+                <div class="game-category">
+                    <h3><i class="fas fa-home"></i> Brookhaven RP</h3>
+                    <div class="item-card" onclick="selectItem('Brookhaven', 'Premium Status')">
+                        <div class="item-info">
+                            <span class="item-name">Premium</span>
+                            <span class="item-price">R$ 18,90</span>
+                        </div>
+                        <button class="btn-select">Pedir</button>
+                    </div>
+                    <div class="item-card" onclick="selectItem('Brookhaven', 'Vehicle Pack')">
+                        <div class="item-info">
+                            <span class="item-name">Vehicle Pack</span>
+                            <span class="item-price">R$ 24,00</span>
+                        </div>
+                        <button class="btn-select">Pedir</button>
+                    </div>
+                </div>
+
+                <!-- Anime Defenders -->
+                <div class="game-category">
+                    <h3><i class="fas fa-fire"></i> Anime Defenders</h3>
+                    <div class="item-card" onclick="selectItem('Anime Defenders', 'VIP Pass')">
+                        <div class="item-info">
+                            <span class="item-name">VIP Pass</span>
+                            <span class="item-price">R$ 14,00</span>
+                        </div>
+                        <button class="btn-select">Pedir</button>
+                    </div>
+                    <div class="item-card" onclick="selectItem('Anime Defenders', 'Battle Pass')">
+                        <div class="item-info">
+                            <span class="item-name">Battle Pass</span>
+                            <span class="item-price">R$ 29,90</span>
+                        </div>
+                        <button class="btn-select">Pedir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gifts" class="gifts-section">
+        <div class="container">
+            <div class="gifts-container">
+                <div class="gifts-form">
+                    <h2>Finalizar <span>Pedido</span></h2>
+                    <p>Preencha os dados e você receberá o link de pagamento no seu contato.</p>
+                    
+                    <form id="giftForm">
+                        <div class="form-group">
+                            <label>Seu Discord ou Email *</label>
+                            <input type="text" id="contactInfo" placeholder="@usuario ou email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Jogo Escolhido *</label>
+                            <input type="text" id="gameName" placeholder="Ex: Blox Fruits" required>
+                        </div>
+
+                        <div id="itemsContainer">
+                            <div class="form-group item-entry">
+                                <label>Itens Desejados *</label>
+                                <input type="text" class="itemName" placeholder="Ex: Dark Blade" required>
+                            </div>
+                        </div>
+
+                        <button type="button" id="addItemBtn" class="btn-add-item">+ Adicionar outro item</button>
+
+                        <div class="form-group">
+                            <label>Observações</label>
+                            <textarea id="message" placeholder="Algum detalhe adicional?"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-gift">Enviar Pedido e Gerar Link</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 EasyBux - Não afiliado à Roblox Corporation.</p>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+            <h2>Pedido Recebido!</h2>
+            <p>Verifique seu contato. Enviaremos o link de pagamento em breve.</p>
+            <button class="btn-primary" onclick="closeModal()" style="margin-top: 20px;">Entendido</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
